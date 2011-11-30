@@ -1,0 +1,65 @@
+<snippet>
+    <content><![CDATA[
+<?${TM_PHP_OPEN_TAG:php}
+class $1Actions extends sfActions
+{
+    public function executeIndex(sfWebRequest \$request)
+    {
+        \$this->$2s = Doctrine::getTable('$1')->findAll();
+    }
+    
+    public function executeNew(sfWebRequest \$request)
+    {
+        \$this->form = new $1Form;
+        
+        if ('POST' === \$request->getMethod())
+            \$this->processForm(\$request, \$this->form);
+    }
+    
+    public function executeEdit(sfWebRequest \$request)
+    {
+        \$this->form = new $1Form(Doctrine::getTable('$1')->findOneById(\$request->getParameter('id')));
+        
+        if ('POST' === \$request->getMethod())
+            \$this->processForm(\$request, \$this->form);
+    }
+    
+    public function executeDelete(sfWebRequest \$request)
+    {
+        if (\$this->getUser()->hasPermission('admin')) {
+            \$item = Doctrine::getTable('$1')->findOneById(\$request->getParameter('id'));
+            \$item->delete();
+        }
+        
+        return sfView::NONE;
+    }
+    
+    public function executeChangePublished(sfWebRequest \$request)
+    {
+        \$item = Doctrine::getTable('$1')->findOneById(\$request->getParameter('id'));
+        
+        if (false != \$item->getPublished())
+            \$item->setPublished(false);
+        else
+            \$item->setPublished(true);
+        \$item->save();
+        
+        return sfView::NONE;
+    }
+    
+    protected function processForm(sfWebRequest \$request, sfForm \$form)
+    {
+        \$form->bind(\$request->getParameter(\$form->getName()), \$request->getFiles(\$form->getName()));
+        
+        if (\$form->isValid()) {
+            \$form->save();
+            \$this->redirect('$2');
+        }
+    }
+}
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>crudsf1</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope>source.python</scope> -->
+</snippet>

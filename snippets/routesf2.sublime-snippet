@@ -1,0 +1,35 @@
+<snippet>
+    <content><![CDATA[
+# $1
+
+$2:
+    pattern: /$3/
+    defaults: { _controller: $4Bundle:$5:index }
+
+$2_new:
+    pattern: /$3/new/
+    defaults: { _controller: $4Bundle:$5:new }
+
+$2_edit:
+    pattern: /$3/{id}/edit/
+    defaults: { _controller: $4Bundle:$5:edit }
+    requirements:
+        id: \d+
+
+$2_delete:
+    pattern: /$3/{id}/delete/
+    defaults: { _controller: $4Bundle:$5:delete }
+    requirements:
+        id: \d+
+
+$2_change_published:
+    pattern: /$3/{id}/delete/
+    defaults: { _controller: $4Bundle:$5:changePublished }
+    requirements:
+        id: \d+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>routesf2</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

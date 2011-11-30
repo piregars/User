@@ -1,0 +1,23 @@
+<snippet>
+  <content><![CDATA[
+<?php if (\$$1->count()) { ?>
+  <table>
+    <tr>
+      <th class="capt" colspan="1">$2</th>
+    </tr>
+    <tr>
+      <th>ID</th>         
+    </tr>
+    <?php foreach (\$$1 as \$row) { ?>
+      <tr>
+        <td><?php echo \$row->getId(); ?></td>
+      </tr>
+    <?php } ?>      
+  </table>
+<?php } ?>
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>tablesf1</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope>source.python</scope> -->
+</snippet>

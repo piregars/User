@@ -1,0 +1,28 @@
+<snippet>
+    <content><![CDATA[
+<?php
+
+namespace $1\\$2Bundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Table(name="$4")
+ * @ORM\Entity
+ */
+class $3
+{
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected \$id;
+    public function getId() { return \$this->id; }$0
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>entitysf2</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

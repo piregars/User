@@ -1,0 +1,48 @@
+<snippet>
+    <content><![CDATA[
+{% extends '::adminLayout.html.twig' %}
+
+{% block actions %}
+    <a class="btn primary" href="{{ path('$1_admin_$2_new') }}">{{ '$2.title.new'|trans({}, '$3Bundle') }}</a>
+{% endblock %}
+
+{% block page_title %}
+    {{ '$2.title.new'|trans({}, '$3Bundle') }}
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li class="active">{{ 'post.title.new'|trans({}, 'MSICoreBundle') }}</li>
+{% endblock %}
+
+{% block content %}
+    {% if $2s|length %}
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for $2 in $2s %}
+                    <tr>
+                        <td class="span1">{{ $2.id }}</td>
+                        <td class="span4">
+                            <a class="label" href="{{ path('$1_admin_$2_edit', {'id': $2.id}) }}">{{ 'edit'|trans({}, 'MSICoreBundle') }}</a>
+                            <a class="action-delete label important" url="{{ path('$1_admin_$2_delete', {'id': $2.id}) }}" href="#">{{ 'delete'|trans({}, 'MSICoreBundle') }}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h2>{{ 'not.found'|trans({}, 'MSICoreBundle') }}</h2>
+    {% endif %}
+{% endblock %}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>indexsf2</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,29 @@
+<snippet>
+    <content><![CDATA[
+# $1
+
+$2:
+    url: /$2/list/
+    param: { module: $2, action: index }
+
+$2_new:
+    url: /$2/new/
+    param: { module: $2, action: new }
+
+$2_edit:
+    url: /$2/:id/edit/
+    param: { module: $2, action: edit }
+
+$2_delete:
+    url: /$2/:id/delete/
+    param: { module: $2, action: delete }
+  
+$2_change_published:
+    url: /$2/:id/change/published/
+    param: { module: $2, action: changePublished }
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>routesf1</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

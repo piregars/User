@@ -1,0 +1,85 @@
+<snippet>
+    <content><![CDATA[
+<?php
+
+namespace $1\\$2Bundle\Controller;
+
+use Symfony\Component\DependencyInjection\ContainerAware;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+class Admin$3Controller extends ContainerAware
+{
+    public function indexAction()
+    {
+        \$$5s = \$this->container->get('$4.$5_manager')->findAllBy(array());
+
+        return \$this->container->get('templating')->renderResponse('$1$2Bundle:$3:adminIndex.html.twig', array(
+            '$5s' => \$$5s,
+        ));
+    }
+
+    public function newAction()
+    {
+        \$$5 = \$this->container->get('$4.$5_manager')->create();
+        \$form = \$this->container->get('$4.$5_form');
+        
+        if (\$response = \$this->processForm(\$form, \$$5))
+            return \$response;
+
+        return \$this->container->get('templating')->renderResponse('$1$2Bundle:$3:adminNew.html.twig', array(
+            'form' => \$form->createView(),
+        ));
+    }
+
+    public function editAction(\$id)
+    {
+        \$$5 = \$this->container->get('$4.$5_manager')->findOneBy(array('id' => \$id));
+        \$form = \$this->container->get('$4.$5_form');
+        
+        if (\$response = \$this->processForm(\$form, \$$5))
+            return \$response;
+
+        return \$this->container->get('templating')->renderResponse('$1$2Bundle:$3:adminEdit.html.twig', array(
+            'form' => \$form->createView(),
+            'id' => \$id,
+        ));
+    }
+
+    public function deleteAction(\$id)
+    {
+        \$$5 = \$this->container->get('$4.$5_manager')->findOneBy(array('id' => \$id));
+        \$this->container->get('$4.$5_manager')->delete(\$$5);
+        
+        return new Response;
+    }
+    
+    public function changePublishedAction(\$id)
+    {
+        \$$5 = \$this->container->get('$4.$5_manager')->findOneBy(array('id' => \$id));
+        \$this->container->get('$4.$5_manager')->changePublished(\$$5);
+        
+        return new Response;
+    }
+    
+    protected function processForm(\$form, \$$5)
+    {
+        \$request = \$this->container->get('request');
+        
+        if (\$request->getMethod() === 'POST') {
+            \$form->bindRequest(\$request);
+
+            if (\$form->isValid()) {
+                \$this->container->get('$4.$5_manager')->save(\$$5);
+                \$url = \$this->container->get('router')->generate('$4_admin_$5_new');
+                
+                return new RedirectResponse(\$url);
+            }
+        }
+    }
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>controllersf2</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

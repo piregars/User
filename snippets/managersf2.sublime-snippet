@@ -1,0 +1,63 @@
+<snippet>
+    <content><![CDATA[
+<?php
+
+namespace $1\\$2Bundle\Entity;
+
+use Doctrine\ORM\EntityManager;
+
+class $3Manager
+{
+    protected \$em;
+    protected \$repository;
+    protected \$entity;
+
+    public function __construct(EntityManager \$em, \$entity)
+    {
+        \$this->em = \$em;
+        \$this->repository = \$em->getRepository(\$entity);
+        \$this->entity = \$em->getClassMetadata(\$entity)->name;
+    }
+    
+    public function findAllBy(array \$criteria, array \$orderBy = null, \$limit = null, \$offset = null)
+    {
+        return \$this->repository->findBy(\$criteria, \$orderBy, \$limit, \$offset);
+    }
+    
+    public function findOneBy(array \$criteria)
+    {
+        return \$this->repository->findOneBy(\$criteria);
+    }
+
+    public function save($3 \$$4)
+    {
+        \$this->em->persist(\$$4);
+        \$this->em->flush();
+    }
+    
+    public function delete($3 \$$4)
+    {
+        \$this->em->remove(\$$4);
+        \$this->em->flush();
+    }
+    
+    public function changePublished($3 \$$4)
+    {
+        if (\$$4->getPublished() != false)
+            \$$4->setPublished(false);
+        else
+            \$$4->setPublished(true);
+        \$this->save(\$$4);
+    }
+
+    public function create()
+    {
+        return new \$this->entity;
+    }
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>managersf2</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

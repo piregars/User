@@ -1,0 +1,16 @@
+<snippet>
+    <content><![CDATA[
+/*
+ * This file is part of the $1 package.
+ *
+ * (c) Groupe MSI <>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */$0
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>copyright</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>
