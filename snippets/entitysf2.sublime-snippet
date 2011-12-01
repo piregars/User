@@ -19,14 +19,14 @@ class $3
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected \$id;
-    public function getId() { return \$this->id; }$0
+    public function getId() { return \$this->id; }
     
     /**
      * @ORM\Column(type="boolean")
      */
     protected \$published;
     public function setPublished(\$published) { \$this->published = \$published; }
-    public function getPublished() { return \$this->published; }
+    public function getPublished() { return \$this->published; }$0
     
     /** @ORM\PrePersist */
     public function prePersist()
