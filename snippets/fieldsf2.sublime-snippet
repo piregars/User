@@ -1,0 +1,23 @@
+<snippet>
+    <content><![CDATA[
+{% include 'MSICoreBundle:Default:tiny_mce.html.twig' %}
+{% form_theme form 'MSICoreBundle:Default:field.html.twig' %}
+
+{{ form_errors(form) }}
+{{ form_widget(form._token) }}
+
+<div class="clearfix {% if form_errors(form.name) %}error{% endif %}">
+    {{ form_label(form.name) }}
+    <div class="input">
+    {{ form_widget(form.name) }}
+    {{ form_errors(form.name) }}
+    </div>
+</div>
+
+{% include 'MSICoreBundle:Default:actions.html.twig' %}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>fieldsf2</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,29 @@
+<snippet>
+    <content><![CDATA[
+{% extends '::admin_layout.html.twig' %}
+
+{% block actions %}
+    <a class="btn" href="{{ path('$2_admin_$3') }}">{{ 'Back'|trans({}, 'MSICoreBundle') }}</a>
+{% endblock %}
+
+{% block page_title %}
+    {{ '$3.title.$4'|trans({}, '$1Bundle') }}
+{% endblock %}
+
+{% block breadcrumb %}
+    {{ parent() }}
+    <li><a href="{{ path('$2_admin_$3') }}">{{ '$3.title.index'|trans({}, '$1Bundle') }}</a> <span class="divider">/</span></li>
+    <li class="active">{{ '$3.title.$4'|trans({}, '$1Bundle') }}</li>
+{% endblock %}
+
+{% block content %}
+    <form action="{{ path('$2_admin_$3_$4'${6:, {'id': id\}}) }}" method="post" {{ form_enctype(form) }}>
+        {% include '$1Bundle:$5:form.html.twig' %}
+    </form>
+{% endblock %}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>formsf2</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

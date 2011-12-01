@@ -7,13 +7,13 @@ namespace $1\\$2Bundle\Controller;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-class Admin$3Controller extends ContainerAware
+class $3Controller extends ContainerAware
 {
     public function indexAction()
     {
         \$$5s = \$this->container->get('$4.$5_manager')->findAllBy(array());
 
-        return \$this->container->get('templating')->renderResponse('$1$2Bundle:$3:adminIndex.html.twig', array(
+        return \$this->container->get('templating')->renderResponse('$1$2Bundle:$3:admin_index.html.twig', array(
             '$5s' => \$$5s,
         ));
     }
@@ -23,10 +23,10 @@ class Admin$3Controller extends ContainerAware
         \$$5 = \$this->container->get('$4.$5_manager')->create();
         \$form = \$this->container->get('$4.$5_form');
         
-        if (\$response = \$this->processForm(\$form, \$$5))
-            return \$response;
+        if (\$this->processForm(\$form, \$$5))
+            return new RedirectResponse(\$this->container->get('router')->generate('$4_admin_$5'));
 
-        return \$this->container->get('templating')->renderResponse('$1$2Bundle:$3:adminNew.html.twig', array(
+        return \$this->container->get('templating')->renderResponse('$1$2Bundle:$3:admin_new.html.twig', array(
             'form' => \$form->createView(),
         ));
     }
@@ -36,10 +36,10 @@ class Admin$3Controller extends ContainerAware
         \$$5 = \$this->container->get('$4.$5_manager')->findOneBy(array('id' => \$id));
         \$form = \$this->container->get('$4.$5_form');
         
-        if (\$response = \$this->processForm(\$form, \$$5))
-            return \$response;
+        if (\$this->processForm(\$form, \$$5))
+            return new RedirectResponse(\$this->container->get('router')->generate('$4_admin_$5'));
 
-        return \$this->container->get('templating')->renderResponse('$1$2Bundle:$3:adminEdit.html.twig', array(
+        return \$this->container->get('templating')->renderResponse('$1$2Bundle:$3:admin_edit.html.twig', array(
             'form' => \$form->createView(),
             'id' => \$id,
         ));
@@ -64,15 +64,15 @@ class Admin$3Controller extends ContainerAware
     protected function processForm(\$form, \$$5)
     {
         \$request = \$this->container->get('request');
+        \$form->setData(\$$5);
         
         if (\$request->getMethod() === 'POST') {
             \$form->bindRequest(\$request);
 
             if (\$form->isValid()) {
                 \$this->container->get('$4.$5_manager')->save(\$$5);
-                \$url = \$this->container->get('router')->generate('$4_admin_$5_new');
                 
-                return new RedirectResponse(\$url);
+                return true;
             }
         }
     }

@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Table(name="$4")
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
 class $3
 {
@@ -19,6 +20,19 @@ class $3
      */
     protected \$id;
     public function getId() { return \$this->id; }$0
+    
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    protected \$published;
+    public function setPublished(\$published) { \$this->published = \$published; }
+    public function getPublished() { return \$this->published; }
+    
+    /** @ORM\PrePersist */
+    public function prePersist()
+    {
+        \$this->setPublished(false);
+    }
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

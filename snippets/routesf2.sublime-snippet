@@ -23,7 +23,7 @@ $2_delete:
         id: \d+
 
 $2_change_published:
-    pattern: /$3/{id}/delete/
+    pattern: /$3/{id}/change/published/
     defaults: { _controller: $4Bundle:$5:changePublished }
     requirements:
         id: \d+

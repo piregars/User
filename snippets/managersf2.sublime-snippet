@@ -10,13 +10,13 @@ class $3Manager
 {
     protected \$em;
     protected \$repository;
-    protected \$entity;
+    protected \$class;
 
-    public function __construct(EntityManager \$em, \$entity)
+    public function __construct(EntityManager \$em, \$class)
     {
         \$this->em = \$em;
-        \$this->repository = \$em->getRepository(\$entity);
-        \$this->entity = \$em->getClassMetadata(\$entity)->name;
+        \$this->repository = \$em->getRepository(\$class);
+        \$this->class = \$em->getClassMetadata(\$class)->name;
     }
     
     public function findAllBy(array \$criteria, array \$orderBy = null, \$limit = null, \$offset = null)
@@ -52,7 +52,7 @@ class $3Manager
 
     public function create()
     {
-        return new \$this->entity;
+        return new \$this->class;
     }
 }
 ]]></content>

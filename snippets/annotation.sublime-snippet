@@ -1,8 +1,9 @@
 <snippet>
     <content><![CDATA[
 /**
- * @ORM\\${1:Column${2:(type="${3:integer}")}}$0
+ * @ORM\\${1:Column${2:(type="${3:integer}")}}
  */
+$0
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>*</tabTrigger>
