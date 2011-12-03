@@ -24,14 +24,14 @@ class $3
     /**
      * @ORM\Column(type="boolean")
      */
-    protected \$published;
-    public function setPublished(\$published) { \$this->published = \$published; }
-    public function getPublished() { return \$this->published; }$0
+    protected \$enabled;
+    public function setEnabled(\$enabled) { \$this->enabled = \$enabled; }
+    public function getEnabled() { return \$this->enabled; }$0
     
     /** @ORM\PrePersist */
     public function prePersist()
     {
-        \$this->setPublished(false);
+        \$this->setEnabled(false);
     }
 }
 ]]></content>

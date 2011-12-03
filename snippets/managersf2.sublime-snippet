@@ -41,12 +41,12 @@ class $3Manager
         \$this->em->flush();
     }
     
-    public function changePublished($3 \$$4)
+    public function changeEnabled($3 \$$4)
     {
-        if (\$$4->getPublished() != false)
-            \$$4->setPublished(false);
+        if (\$$4->getEnabled() != false)
+            \$$4->setEnabled(false);
         else
-            \$$4->setPublished(true);
+            \$$4->setEnabled(true);
         \$this->save(\$$4);
     }
 
