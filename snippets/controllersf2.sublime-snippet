@@ -53,10 +53,10 @@ class $3Controller extends ContainerAware
         return new Response;
     }
     
-    public function changePublishedAction(\$id)
+    public function changeEnabledAction(\$id)
     {
         \$$5 = \$this->container->get('$4.$5_manager')->findOneBy(array('id' => \$id));
-        \$this->container->get('$4.$5_manager')->changePublished(\$$5);
+        \$this->container->get('$4.$5_manager')->changeEnabled(\$$5);
         
         return new Response;
     }

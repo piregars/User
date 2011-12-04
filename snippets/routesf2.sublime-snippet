@@ -24,7 +24,7 @@ $2_delete:
 
 $2_change_enabled:
     pattern: /$3/{id}/change/enabled/
-    defaults: { _controller: $4Bundle:$5:changePublished }
+    defaults: { _controller: $4Bundle:$5:changeEnabled }
     requirements:
         id: \d+
 ]]></content>
