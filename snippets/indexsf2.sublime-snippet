@@ -20,8 +20,8 @@
         <table class="default">
             <thead>
                 <tr>
-                    <th>{{ 'Name'|trans({}, 'MSICoreBundle') }}</th>
                     <th>{{ 'Enabled'|trans({}, 'MSICoreBundle') }}</th>
+                    <th>{{ 'Name'|trans({}, 'MSICoreBundle') }}</th>
                     <th>ID</th>
                     <th>Actions</th>
                 </tr>
@@ -29,7 +29,6 @@
             <tbody>
                 {% for $2 in $2s %}
                     <tr>
-                        <td>{{ $2.name }}</td>
                         <td class="span1">
                             {% if $2.enabled %}
                                 <div class="action-change-enabled bullet green" url="{{ path('$1_admin_$2_change_enabled', {'id': $2.id}) }}"><span class="hide">1</span></div>
@@ -37,6 +36,7 @@
                                 <div class="action-change-enabled bullet white" url="{{ path('$1_admin_$2_change_enabled', {'id': $2.id}) }}"><span class="hide">0</span></div>
                             {% endif %}
                         </td>
+                        <td>{{ $2.name }}</td>
                         <td class="text-center span1">{{ $2.id }}</td>
                         <td class="span4">
                             <a class="label" href="{{ path('$1_admin_$2_edit', {'id': $2.id}) }}">{{ 'edit'|trans({}, 'MSICoreBundle') }}</a>
