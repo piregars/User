@@ -1,6 +1,6 @@
 {
     // The theme controls the look of Sublime Text's UI (buttons, tabs, scroll bars, etc)
-    "theme": "Soda Dark.sublime-theme",
+    "theme": "Default.sublime-theme",
 
     // Exiting the application with hot_exit enabled will cause it to close
     // immediately without prompting. Unsaved modifications and open files will
