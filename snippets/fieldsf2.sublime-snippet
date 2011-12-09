@@ -6,13 +6,15 @@
 {{ form_errors(form) }}
 {{ form_widget(form._token) }}
 
-<div class="clearfix {% if form_errors(form.name) %}error{% endif %}">
-    {{ form_label(form.name) }}
-    <div class="input">
-    {{ form_widget(form.name) }}
-    {{ form_errors(form.name) }}
+<fieldset>
+    <div class="clearfix {% if form_errors(form.name) %}error{% endif %}">
+        {{ form_label(form.name) }}
+        <div class="input">
+        {{ form_widget(form.name) }}
+        {{ form_errors(form.name) }}
+        </div>
     </div>
-</div>
+</fieldset>
 
 {% include 'MSICoreBundle:Default:actions.html.twig' %}
 ]]></content>

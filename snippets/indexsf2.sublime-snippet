@@ -12,7 +12,7 @@
 
 {% block breadcrumb %}
     {{ parent() }}
-    <li class="active">{{ '$2.title.index'|trans({}, 'MSICoreBundle') }}</li>
+    <li class="active">{{ '$2.title.index'|trans({}, '$3Bundle') }}</li>
 {% endblock %}
 
 {% block content %}

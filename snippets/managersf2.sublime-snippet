@@ -54,6 +54,11 @@ class $3Manager
     {
         return new \$this->class;
     }
+    
+    public function getClass()
+    {
+        return \$this->class;
+    }
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
