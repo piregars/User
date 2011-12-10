@@ -4,25 +4,27 @@
     <table>
         <thead>
             <tr>
-                <th><?php echo __('Name'); ?></th>
                 <th><?php echo __('Published'); ?></th>
+                <th><?php echo __('Name'); ?></th>
+                <th>ID</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach (\$$1 as \$$2) { ?>
                 <tr>
-                    <td><?php echo \$$2->getName(); ?></td>
-                    <td>
+                    <td class="span1">
                         <?php if (\$$2->getPublished()) { ?>
-                            <div class="action-change-published bullet bullet-green" url="<?php echo url_for('$2_change_published', array('id' => \$$2->getId())); ?>"><span class="hide">0</span></div>
+                            <div class="action-change-published bullet bullet-green" url="<?php echo url_for('$3_change_published', array('id' => \$$2->getId())); ?>"><span class="hide">0</span></div>
                         <?php } else { ?>
-                            <div class="action-change-published bullet bullet-white" url="<?php echo url_for('$2_change_published', array('id' => \$$2->getId())); ?>"><span class="hide">1</span></div>
+                            <div class="action-change-published bullet bullet-white" url="<?php echo url_for('$3_change_published', array('id' => \$$2->getId())); ?>"><span class="hide">1</span></div>
                         <?php } ?>
                     </td>
+                    <td><?php echo \$$2->getName(); ?></td>
+                    <td class="span1 text-center"><?php echo \$$2->getId(); ?></td>
                     <td class="span4">
-                        <a class="label" href="<?php echo url_for('$2_edit', array('id' => \$$2->getId())); ?>"><?php echo __("Edit"); ?></a>
-                        <span class="action-delete pointer label important" url="<?php echo url_for('$2_delete', array('id' => \$$2->getId())); ?>"><?php echo __("Delete"); ?></span>
+                        <a class="label" href="<?php echo url_for('$3_edit', array('id' => \$$2->getId())); ?>"><?php echo __("Edit"); ?></a>
+                        <span class="action-delete pointer label important" url="<?php echo url_for('$3_delete', array('id' => \$$2->getId())); ?>"><?php echo __("Delete"); ?></span>
                     </td>
                 </tr>
             <?php } ?>
@@ -32,19 +34,19 @@
     <h3><?php echo __('No data found.'); ?></h3>
 <?php } ?>
 
-<?php slot('pageTitle'); ?>
-    <h1><?php echo __('$3s'); ?></h1>
+<?php slot('page_title'); ?>
+    <h1><?php echo __('$5'); ?></h1>
 <?php end_slot(); ?>
 
 <?php slot('actions') ?>
-    <a class="btn primary" href="<?php echo url_for('$2_new'); ?>"><?php echo __('Add New $3'); ?></a>
+    <a class="btn primary" href="<?php echo url_for('$3_new'); ?>"><?php echo __('Add New $4'); ?></a>
 <?php end_slot(); ?>
 
 <?php slot('breadcrumb') ?>
-    <li class="active"><?php echo __('$3s'); ?></li>
+    <li class="active"><?php echo __('$5'); ?></li>
 <?php end_slot(); ?>
 
-<?php slot('bottomJs') ?>
+<?php slot('bottom_js') ?>
     <script src="/admin/js/action-change-published.js"></script>
 <?php end_slot(); ?>
 ]]></content>

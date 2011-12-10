@@ -3,24 +3,24 @@
 # $1
 
 $2:
-    url: /$2/list/
-    param: { module: $2, action: index }
+    url: /$4/
+    param: { module: $3, action: index }
 
 $2_new:
-    url: /$2/new/
-    param: { module: $2, action: new }
+    url: /$4/new/
+    param: { module: $3, action: new }
 
 $2_edit:
-    url: /$2/:id/edit/
-    param: { module: $2, action: edit }
+    url: /$4/:id/edit/
+    param: { module: $3, action: edit }
 
 $2_delete:
-    url: /$2/:id/delete/
-    param: { module: $2, action: delete }
-  
+    url: /$4/:id/delete/
+    param: { module: $3, action: delete }
+
 $2_change_published:
-    url: /$2/:id/change/published/
-    param: { module: $2, action: changePublished }
+    url: /$4/:id/change/published/
+    param: { module: $3, action: changePublished }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>routesf1</tabTrigger>

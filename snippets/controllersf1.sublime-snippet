@@ -1,11 +1,12 @@
 <snippet>
     <content><![CDATA[
 <?${TM_PHP_OPEN_TAG:php}
+
 class $1Actions extends sfActions
 {
     public function executeIndex(sfWebRequest \$request)
     {
-        \$this->$2s = Doctrine::getTable('$1')->findAll();
+        \$this->$3 = Doctrine::getTable('$1')->findAll();
     }
     
     public function executeNew(sfWebRequest \$request)
@@ -53,13 +54,14 @@ class $1Actions extends sfActions
         
         if (\$form->isValid()) {
             \$form->save();
+            \$this->getUser()->setFlash('success', '');
             \$this->redirect('$2');
         }
     }
 }
 ]]></content>
   <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-  <tabTrigger>crudsf1</tabTrigger>
+  <tabTrigger>controllersf1</tabTrigger>
   <!-- Optional: Set a scope to limit where the snippet will trigger -->
   <!-- <scope>source.python</scope> -->
 </snippet>

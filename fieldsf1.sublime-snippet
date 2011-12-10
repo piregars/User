@@ -1,0 +1,23 @@
+<snippet>
+    <content><![CDATA[
+<?php echo \$form->renderHiddenFields(); ?>
+
+<fieldset>
+    <div class="clearfix">
+        <?php echo \$form['name']->renderError(); ?>
+        <?php echo \$form['name']->renderLabel(__('Name')); ?>
+        <div class="input">
+        <?php echo \$form['name']->render(); ?>
+        </div>
+    </div>
+</fieldset>
+
+<div class="actions">
+    <button class="btn primary" type="submit"><?php echo __('Save'); ?></button>
+</div>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>fieldsf1</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>
