@@ -1,0 +1,34 @@
+<snippet>
+    <content><![CDATA[
+public function findAllBy(array \$criteria = null, array \$joint = null, \$orderBy = null, \$limit = null)
+{
+    \$query = \$this->createQuery('a');
+    
+    if (null != \$criteria) {
+        foreach (\$criteria as \$k => \$v) {
+            \$query->andWhere('a.'.\$k.' = ?', \$v);
+        }
+    }
+    
+    if (null != \$joint) {
+        foreach (\$joint as \$v) {
+            \$query->leftJoin(\$v);
+        }
+    }
+    
+    if (null != \$orderBy) {
+        \$query->orderBy(\$orderBy);
+    }
+    
+    if (null != \$limit) {
+        \$query->limit(\$limit);
+    }
+    
+    return \$query->execute();
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>findallbysf1</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>
