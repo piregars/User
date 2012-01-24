@@ -1,3 +1,9 @@
 {
-	"auto_upgrade_last_run": 1323548379
+	"auto_upgrade_last_run": 1327420323,
+	"installed_packages":
+	[
+		"AAAPackageDev",
+		"Package Control",
+		"ZenCoding"
+	]
 }

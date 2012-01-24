@@ -6,7 +6,7 @@ public function findAllBy(array \$criteria = null, array \$joint = null, \$order
     
     if (null != \$criteria) {
         foreach (\$criteria as \$k => \$v) {
-            \$query->andWhere('a.'.\$k.' = ?', \$v);
+            \$query->andWhere(\$k.' = ?', \$v);
         }
     }
     
@@ -24,7 +24,10 @@ public function findAllBy(array \$criteria = null, array \$joint = null, \$order
         \$query->limit(\$limit);
     }
     
-    return \$query->execute();
+    if (\$limit === 1)
+        return \$query->fetchOne();
+    else
+        return \$query->execute();
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
