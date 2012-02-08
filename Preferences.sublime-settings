@@ -1,5 +1,5 @@
 {
-	"auto_complete": false,
+	"auto_complete": true,
 	"auto_complete_commit_on_tab": false,
 	"auto_complete_delay": 50,
 	"auto_complete_selector": "source - comment",
@@ -12,8 +12,8 @@
 		}
 	],
 	"auto_complete_with_fields": false,
-	"auto_indent": false,
-	"auto_match_enabled": true,
+	"auto_indent": true,
+	"auto_match_enabled": false,
 	"binary_file_patterns":
 	[
 		"*.jpg",
@@ -32,7 +32,7 @@
 	],
 	"caret_style": "smooth",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/User/colour-schemes/Sweyla763735.tmTheme",
+	"color_scheme": "Packages/User/colour-schemes/Tomorrow-Night.tmTheme",
 	"default_encoding": "UTF-8",
 	"default_line_ending": "system",
 	"detect_indentation": true,
