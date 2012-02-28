@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+<!-- $1 -->
+<parameter key="msi_$2.$3.class">MSI\\$4Bundle\Entity\\$5</parameter>
+<parameter key="msi_$2.$3_provider.class">MSI\\$4Bundle\Provider\\$5Provider</parameter>
+<parameter key="msi_$2.$3_manager.class">MSI\\$4Bundle\Entity\\$5Manager</parameter>
+<parameter key="msi_$2.$3_controller.class">MSI$4Bundle:CRUD</parameter>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>param</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -3,5 +3,6 @@
     { "keys": ["command+shift+p"], "command": "insert_snippet", "args": {"contents": "<p>$TM_SELECTED_TEXT</p>"} },
     { "keys": ["command+shift+l"], "command": "insert_snippet", "args": {"contents": "<li>$TM_SELECTED_TEXT</li>"} },
     { "keys": ["command+shift+a"], "command": "insert_snippet", "args": {"contents": "<a ${2:target=\"_blank\"} href=\"$1\">$TM_SELECTED_TEXT</a>"} },
-    { "keys": ["command+shift+u"], "command": "insert_snippet", "args": {"contents": "<ul>$TM_SELECTED_TEXT</ul>"} }
+    { "keys": ["command+shift+u"], "command": "insert_snippet", "args": {"contents": "<ul>$TM_SELECTED_TEXT</ul>"} },
+    { "keys": ["command+shift+s"], "command": "insert_snippet", "args": {"contents": "<strong>$TM_SELECTED_TEXT</strong>"} }
 ]
