@@ -6,7 +6,7 @@ class $1Actions extends sfActions
 {
     public function executeIndex(sfWebRequest \$request)
     {
-        \$this->$3 = Doctrine::getTable('$1')->findAll();
+        \$this->$3 = Doctrine::getTable('$1')->findAllBy('a.*, t.*', array(), array('a.Translation t'));
     }
     
     public function executeNew(sfWebRequest \$request)

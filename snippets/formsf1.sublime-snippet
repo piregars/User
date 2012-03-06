@@ -1,21 +1,23 @@
 <snippet>
   <content><![CDATA[
-<form action="<?php echo url_for('$2_$1', array($0)); ?>" method="post" <?php if (\$form->isMultipart()) echo 'enctype="multipart/form-data"'; ?>>
-    <?php include_partial('form', array('form' => \$form)); ?>
-</form>
+<?php slot('content') ?>
+    <form action="<?php echo url_for('$2_$1', array($0)) ?>" method="post" <?php if (\$form->isMultipart()) echo 'enctype="multipart/form-data"' ?>>
+        <?php include_partial('form', array('form' => \$form)) ?>
+    </form>
+<?php end_slot() ?>
 
 <?php slot('breadcrumb') ?>
-  <li><a href="<?php echo url_for('$2'); ?>"><?php echo __('$5'); ?></a> <span class="divider">/</span></li>
-  <li class="active"><?php echo __('$3 $4'); ?></li>
-<?php end_slot(); ?>
+    <li><a href="<?php echo url_for('$2') ?>"><?php echo __('$5') ?></a> <span class="divider">/</span></li>
+    <li class="active"><?php echo __('$3 $4') ?></li>
+<?php end_slot() ?>
 
 <?php slot('actions') ?>
-  <a class="btn" href="<?php echo url_for('$2'); ?>"><?php echo __('Back'); ?></a>
-<?php end_slot(); ?>
+    <a class="btn btn-inverse" href="<?php echo url_for('$2') ?>"><i class="icon-white icon-arrow-left"></i> <?php echo __('Back') ?></a>
+<?php end_slot() ?>
 
-<?php slot('page_title'); ?>
-  <h1><?php echo __('$3 $4'); ?></h1>
-<?php end_slot(); ?>
+<?php slot('page_title') ?>
+    <?php echo __('$3 $4') ?>
+<?php end_slot() ?>
 ]]></content>
   <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
   <tabTrigger>formsf1</tabTrigger>
