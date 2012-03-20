@@ -2,63 +2,12 @@
     <content><![CDATA[
 <?php
 
-namespace $1\\$2Bundle\Entity;
+namespace $1\Bundle\\$2Bundle\Entity;
 
-use Doctrine\ORM\EntityManager;
+use MSI\AdminBundle\Entity\Manager as BaseManager;
 
-class $3Manager
+class $3Manager extends BaseManager
 {
-    protected \$em;
-    protected \$repository;
-    protected \$class;
-
-    public function __construct(EntityManager \$em, \$class)
-    {
-        \$this->em = \$em;
-        \$this->repository = \$em->getRepository(\$class);
-        \$this->class = \$em->getClassMetadata(\$class)->name;
-    }
-    
-    public function findAllBy(array \$criteria, array \$orderBy = null, \$limit = null, \$offset = null)
-    {
-        return \$this->repository->findBy(\$criteria, \$orderBy, \$limit, \$offset);
-    }
-    
-    public function findOneBy(array \$criteria)
-    {
-        return \$this->repository->findOneBy(\$criteria);
-    }
-
-    public function save($3 \$$4)
-    {
-        \$this->em->persist(\$$4);
-        \$this->em->flush();
-    }
-    
-    public function delete($3 \$$4)
-    {
-        \$this->em->remove(\$$4);
-        \$this->em->flush();
-    }
-    
-    public function changeEnabled($3 \$$4)
-    {
-        if (\$$4->getEnabled() != false)
-            \$$4->setEnabled(false);
-        else
-            \$$4->setEnabled(true);
-        \$this->save(\$$4);
-    }
-
-    public function create()
-    {
-        return new \$this->class;
-    }
-    
-    public function getClass()
-    {
-        return \$this->class;
-    }
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

@@ -1,35 +1,25 @@
 <snippet>
     <content><![CDATA[
-<?xml version="1.0" ?>
+<!-- $3 -->
+<parameter key="$4_$5.class">$1\Bundle\\$2Bundle\Entity\\$3</parameter>
+<parameter key="$4_$5_manager.class">$1\Bundle\\$2Bundle\Entity\\$3Manager</parameter>
+<parameter key="$4_$5_admin.class">$1\Bundle\\$2Bundle\Admin\\$3Admin</parameter>
 
-<container xmlns="http://symfony.com/schema/dic/services"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
-    
-    <parameters>
-        <parameter key="$4.$5.class">$1\\$2Bundle\Entity\\$3</parameter>
-        <parameter key="$4.$5_manager.class">$1\\$2Bundle\Entity\\$3Manager</parameter>
-        <parameter key="$4.$5_type.class">$1\\$2Bundle\Form\\$3Type</parameter>
-    </parameters>
-    
-    <services>
-        <service id="$4.entity_manager" factory-service="doctrine" factory-method="getEntityManager" class="Doctrine\ORM\EntityManager" public="false">
-        </service>
-        
-        <service id="$4.$5_manager" class="%$4.$5_manager.class%">
-            <argument type="service" id="$4.entity_manager" />
-            <argument>%$4.$5.class%</argument>
-        </service>
-        
-        <service id="$4.$5_form" factory-method="create" factory-service="form.factory" class="Symfony\Component\Form\Form">
-            <argument type="service" id="$4.$5_type" />
-        </service>
+<!-- $3 Manager -->
+<service id="$4_$5_manager" class="%$4_$5_manager.class%">
+    <argument type="service" id="msi_admin.entity_manager" />
+    <argument>%$4_$5.class%</argument>
+</service>
+<!-- $3 Admin -->
+<service id="$4_$5_admin" parent="msi_admin" class="%$4_$5_admin.class%">
+    <argument />
+    <argument>$1$2Bundle:$3</argument>
+    <call method="setManager">
+        <argument type="service" id="$4_$5_manager" />
+    </call>
+    <tag name="msi.admin"></tag>
+</service>
 
-        <service id="$4.$5_type" class="%$4.$5_type.class%">
-            <argument>%$4.$5.class%</argument>
-        </service>
-    </services>
-</container>
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>servicesf2</tabTrigger>

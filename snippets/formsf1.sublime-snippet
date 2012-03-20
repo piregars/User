@@ -11,10 +11,6 @@
     <li class="active"><?php echo __('$3 $4') ?></li>
 <?php end_slot() ?>
 
-<?php slot('actions') ?>
-    <a class="btn btn-inverse" href="<?php echo url_for('$2') ?>"><i class="icon-white icon-arrow-left"></i> <?php echo __('Back') ?></a>
-<?php end_slot() ?>
-
 <?php slot('page_title') ?>
     <?php echo __('$3 $4') ?>
 <?php end_slot() ?>

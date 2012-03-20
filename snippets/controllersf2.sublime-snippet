@@ -2,81 +2,15 @@
     <content><![CDATA[
 <?php
 
-namespace $1\\$2Bundle\Controller;
+namespace $1\Bundle\\$2Bundle\Controller;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
+use MSI\AdminBundle\Controller\CRUDController;
 
-class $3Controller extends ContainerAware
+class $3Controller extends CRUDController
 {
-    public function indexAction()
-    {
-        \$$5s = \$this->container->get('$4.$5_manager')->findAllBy(array());
-
-        return \$this->container->get('templating')->renderResponse('$1$2Bundle:$3:admin_index.html.twig', array(
-            '$5s' => \$$5s,
-        ));
-    }
-
-    public function newAction()
-    {
-        \$$5 = \$this->container->get('$4.$5_manager')->create();
-        \$form = \$this->container->get('$4.$5_form');
-        
-        if (\$this->processForm(\$form, \$$5))
-            return new RedirectResponse(\$this->container->get('router')->generate('$4_admin_$5'));
-
-        return \$this->container->get('templating')->renderResponse('$1$2Bundle:$3:admin_new.html.twig', array(
-            'form' => \$form->createView(),
-        ));
-    }
-
-    public function editAction(\$id)
-    {
-        \$$5 = \$this->container->get('$4.$5_manager')->findOneBy(array('id' => \$id));
-        \$form = \$this->container->get('$4.$5_form');
-        
-        if (\$this->processForm(\$form, \$$5))
-            return new RedirectResponse(\$this->container->get('router')->generate('$4_admin_$5'));
-
-        return \$this->container->get('templating')->renderResponse('$1$2Bundle:$3:admin_edit.html.twig', array(
-            'form' => \$form->createView(),
-            'id' => \$id,
-        ));
-    }
-
-    public function deleteAction(\$id)
-    {
-        \$$5 = \$this->container->get('$4.$5_manager')->findOneBy(array('id' => \$id));
-        \$this->container->get('$4.$5_manager')->delete(\$$5);
-        
-        return new Response;
-    }
-    
-    public function changeEnabledAction(\$id)
-    {
-        \$$5 = \$this->container->get('$4.$5_manager')->findOneBy(array('id' => \$id));
-        \$this->container->get('$4.$5_manager')->changeEnabled(\$$5);
-        
-        return new Response;
-    }
-    
-    protected function processForm(\$form, \$$5)
-    {
-        \$request = \$this->container->get('request');
-        \$form->setData(\$$5);
-        
-        if (\$request->getMethod() === 'POST') {
-            \$form->bindRequest(\$request);
-
-            if (\$form->isValid()) {
-                \$this->container->get('$4.$5_manager')->save(\$$5);
-                
-                return true;
-            }
-        }
-    }
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

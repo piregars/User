@@ -5,15 +5,16 @@
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th><?php echo __('Published') ?></th>
                     <th><?php echo __('Name') ?></th>
-                    <th>ID</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach (\$$1 as \$$2) { ?>
                     <tr>
+                        <td><?php echo \$$2->getId() ?></td>
                         <td class="span1">
                             <?php if (\$$2->getPublished()) { ?>
                                 <div class="action-change-published bullet green" url="<?php echo url_for('$3_change_published', array('id' => \$$2->getId())) ?>"><span class="hide">0</span></div>
@@ -22,7 +23,6 @@
                             <?php } ?>
                         </td>
                         <td><?php echo \$$2->getName() ?></td>
-                        <td><?php echo \$$2->getId() ?></td>
                         <td>
                             <a class="label" href="<?php echo url_for('$3_edit', array('id' => \$$2->getId())) ?>"><?php echo __("Edit") ?></a>
                             <span class="action-delete label label-important" url="<?php echo url_for('$3_delete', array('id' => \$$2->getId())) ?>"><?php echo __("Delete") ?></span>

@@ -2,14 +2,13 @@
     <content><![CDATA[
 <?php
 
-namespace $1\\$2Bundle\Entity;
+namespace $1\Bundle\\$2Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(name="$4")
  * @ORM\Entity
- * @ORM\HasLifecycleCallbacks
  */
 class $3
 {
@@ -19,19 +18,10 @@ class $3
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected \$id;
-    public function getId() { return \$this->id; }
     
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    protected \$enabled;
-    public function setEnabled(\$enabled) { \$this->enabled = \$enabled; }
-    public function getEnabled() { return \$this->enabled; }$0
-    
-    /** @ORM\PrePersist */
-    public function prePersist()
+    public function getId()
     {
-        \$this->setEnabled(false);
+        return \$this->id;
     }
 }
 ]]></content>
