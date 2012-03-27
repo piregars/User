@@ -13,8 +13,8 @@ class $3Admin extends Admin
     public function configureTable(TableBuilder \$builder)
     {
         \$builder
-            ->add('id')
             ->add('name')
+            ->add('id')
         ;
     }
 
