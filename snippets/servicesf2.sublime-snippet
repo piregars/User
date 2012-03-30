@@ -1,21 +1,21 @@
 <snippet>
     <content><![CDATA[
         <!-- $3 -->
-        <parameter key="$4_$5.class">$1\Bundle\\$2Bundle\Entity\\$3</parameter>
-        <parameter key="$4_$5_manager.class">MSI\AdminBundle\Entity\Manager</parameter>
-        <parameter key="$4_$5_admin.class">$1\Bundle\\$2Bundle\Admin\\$3Admin</parameter>
+        <parameter key="$4.$5.class">$1\Bundle\\$2Bundle\Entity\\$3</parameter>
+        <parameter key="$4.$5.model_manager.class">MSI\AdminBundle\Entity\ModelManager</parameter>
+        <parameter key="$4.$5.admin.class">$1\Bundle\\$2Bundle\Admin\\$3Admin</parameter>
 
-        <!-- $3 Manager -->
-        <service id="$4_$5_manager" class="%$4_$5_manager.class%">
-            <argument type="service" id="msi_admin.entity_manager" />
-            <argument>%$4_$5.class%</argument>
+        <!-- $3 ModelManager -->
+        <service id="$4.$5.model_manager" class="%$4.$5.model_manager.class%">
+            <argument type="service" id="msi.admin.entity_manager" />
+            <argument>%$4.$5.class%</argument>
         </service>
         <!-- $3 Admin -->
-        <service id="$4_$5_admin" parent="msi_admin" class="%$4_$5_admin.class%">
+        <service id="$4_$5_admin" parent="msi_admin" class="%$4.$5.admin.class%">
             <argument />
             <argument>$1$2Bundle:$3</argument>
-            <call method="setManager">
-                <argument type="service" id="$4_$5_manager" />
+            <call method="setModelManager">
+                <argument type="service" id="$4.$5.model_manager" />
             </call>
             <tag name="msi.admin"></tag>
         </service>
