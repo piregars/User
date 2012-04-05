@@ -4,21 +4,19 @@
 
 namespace $1\Bundle\\$2Bundle\Admin;
 
-use MSI\AdminBundle\Admin\Admin;
-use Symfony\Component\Form\FormBuilder;
-use MSI\AdminBundle\Builder\TableBuilder;
+use Msi\AdminBundle\Admin\Admin;
 
 class $3Admin extends Admin
 {
-    public function configureTable(TableBuilder \$builder)
+    public function configureDataTable(\$builder)
     {
         \$builder
             ->add('name')
-            ->add('id')
+            ->add('', 'action')
         ;
     }
 
-    public function configureForm(FormBuilder \$builder)
+    public function configureForm(\$builder)
     {
         \$builder
             ->add('name')
@@ -27,7 +25,7 @@ class $3Admin extends Admin
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>adminsf2</tabTrigger>
+    <tabTrigger>admin</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
 </snippet>

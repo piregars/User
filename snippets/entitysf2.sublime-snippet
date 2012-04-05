@@ -18,15 +18,10 @@ class $3
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected \$id;
-    
-    public function getId()
-    {
-        return \$this->id;
-    }
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>entitysf2</tabTrigger>
+    <tabTrigger>ent</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
 </snippet>

@@ -1,27 +1,22 @@
 <snippet>
     <content><![CDATA[
-        <!-- $3 -->
-        <parameter key="$4_$5.class">$1\Bundle\\$2Bundle\Entity\\$3</parameter>
-        <parameter key="$4_$5_manager.class">MSI\AdminBundle\Entity\Manager</parameter>
-        <parameter key="$4_$5_admin.class">$1\Bundle\\$2Bundle\Admin\\$3Admin</parameter>
-
         <!-- $3 Manager -->
-        <service id="$4_$5_manager" class="%$4_$5_manager.class%">
-            <argument type="service" id="msi_admin.entity_manager" />
-            <argument>%$4_$5.class%</argument>
+        <service id="$4.$5.$6_manager" class="Msi\AdminBundle\Entity\ModelManager">
+            <argument type="service" id="msi.admin.entity_manager" />
+            <argument>$1\Bundle\\$2Bundle\Entity\\$3</argument>
         </service>
         <!-- $3 Admin -->
-        <service id="$4_$5_admin" parent="msi_admin" class="%$4_$5_admin.class%">
+        <service id="$4_$5_$6_admin" parent="msi_admin" class="$1\Bundle\\$2Bundle\Admin\\$3Admin">
             <argument />
-            <argument>$1$2Bundle:$3</argument>
-            <call method="setManager">
-                <argument type="service" id="$4_$5_manager" />
+            <argument>$1$2Bundle</argument>
+            <call method="setModelManager">
+                <argument type="service" id="$4.$5.$6_manager" />
             </call>
             <tag name="msi.admin"></tag>
         </service>
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>servicesf2</tabTrigger>
+    <tabTrigger>ser</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
 </snippet>
