@@ -8,6 +8,7 @@ public function get${1/(.*)/\u$1/}()
 public function set${1/(.*)/\u$1/}(\$$1)
 {
     \$this->$1 = \$$1;
+    
     return \$this;
 }
 
@@ -17,5 +18,5 @@ public function set${1/(.*)/\u$1/}(\$$1)
     <!-- Optional: Scope the tab trigger will be active in -->
     <scope>source.php</scope>
     <!-- Optional: Description to show in the menu -->
-    <description>CREATE TEH GETTERZ</description>
+    <description>Create getter and setter methods</description>
 </snippet>

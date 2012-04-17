@@ -1,19 +1,11 @@
 <snippet>
     <content><![CDATA[
-public function add$1(\$$2)
-{
-    \$this->$2s[] = \$$2;
-
-    return \$this;
-}
-
-public function get$1s()
-{
-    return \$this->$2s;
-}$0
+{{ form_label(form.$1, '$2'|trans({}, '$3Bundle')) }}
+{{ form_errors(form.$1) }}
+{{ form_widget(form.$1) }}
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>adder</tabTrigger>
+    <tabTrigger>formrow</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
 </snippet>

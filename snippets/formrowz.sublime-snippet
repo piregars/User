@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+{{ form_label(form.${1:$SELECTION}, '${1:$SELECTION}'|trans({}, '$0Bundle')) }}
+{{ form_errors(form.${1:$SELECTION}) }}
+{{ form_widget(form.${1:$SELECTION}) }}
+
+]]></content>
+    <!-- Optional: Tab trigger to activate the snippet -->
+    <tabTrigger>formrowz</tabTrigger>
+    <!-- Optional: Scope the tab trigger will be active in -->
+    <!-- <scope>source.php</scope> -->
+    <!-- Optional: Description to show in the menu -->
+    <description>FORM THE WIN</description>
+</snippet>
