@@ -1,7 +1,7 @@
 <snippet>
     <content><![CDATA[
         <!-- $3 Manager -->
-        <service id="$4.$5.$6_manager" class="Msi\AdminBundle\Entity\ModelManager">
+        <service id="$4_$5.$6_manager" class="Msi\AdminBundle\Entity\ModelManager">
             <argument type="service" id="msi.admin.entity_manager" />
             <argument>$1\Bundle\\$2Bundle\Entity\\$3</argument>
         </service>
@@ -10,7 +10,7 @@
             <argument />
             <argument>$1$2Bundle</argument>
             <call method="setModelManager">
-                <argument type="service" id="$4.$5.$6_manager" />
+                <argument type="service" id="$4_$5.$6_manager" />
             </call>
             <tag name="msi.admin"></tag>
         </service>
