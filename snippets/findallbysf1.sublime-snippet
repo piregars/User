@@ -1,29 +1,25 @@
 <snippet>
     <content><![CDATA[
-public function findAllBy(array \$criteria = null, array \$joint = null, \$orderBy = null, \$limit = null)
+public function findAllBy(array \$criteria = array(), array \$join = array(), array \$orderBy = array(), \$limit = null)
 {
     \$query = \$this->createQuery('a');
-    
-    if (null != \$criteria) {
-        foreach (\$criteria as \$k => \$v) {
-            \$query->andWhere(\$k.' = ?', \$v);
-        }
+
+    foreach (\$criteria as \$k => \$v) {
+        \$query->andWhere(\$k.' = ?', \$v);
     }
-    
-    if (null != \$joint) {
-        foreach (\$joint as \$v) {
-            \$query->leftJoin(\$v);
-        }
+
+    foreach (\$join as \$v) {
+        \$query->leftJoin(\$v);
     }
-    
-    if (null != \$orderBy) {
-        \$query->orderBy(\$orderBy);
+
+    foreach (\$orderBy as \$v) {
+        \$query->addOrderBy(\$v);
     }
-    
+
     if (null != \$limit) {
         \$query->limit(\$limit);
     }
-    
+
     if (\$limit === 1)
         return \$query->fetchOne();
     else
