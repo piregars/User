@@ -4,19 +4,21 @@
 
 namespace $1\Bundle\\$2Bundle\Admin;
 
-use Msi\AdminBundle\Admin\Admin;
+use Msi\Bundle\AdminBundle\Admin\Admin;
 
 class $3Admin extends Admin
 {
-    public function configureDataTable(\$builder)
+    public function buildTable(\$builder)
     {
         \$builder
+            ->add('id')
             ->add('name')
+            ->add('updatedAt', 'date')
             ->add('', 'action')
         ;
     }
 
-    public function configureForm(\$builder)
+    public function buildForm(\$builder)
     {
         \$builder
             ->add('name')

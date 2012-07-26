@@ -1,12 +1,13 @@
 <snippet>
     <content><![CDATA[
         <!-- $3 Manager -->
-        <service id="$4_$5.$6_manager" class="Msi\AdminBundle\Entity\ModelManager">
-            <argument type="service" id="msi.admin.entity_manager" />
+        <service id="$4_$5.$6_manager" class="Msi\Bundle\AdminBundle\Entity\ModelManager">
+            <argument type="service" id="msi_admin.entity_manager" />
             <argument>$1\Bundle\\$2Bundle\Entity\\$3</argument>
+            <argument type="service" id="session" />
         </service>
         <!-- $3 Admin -->
-        <service id="$4_$5_$6_admin" parent="msi_admin" class="$1\Bundle\\$2Bundle\Admin\\$3Admin">
+        <service id="$4_$5_$6_admin" parent="msi_admin.admin" class="$1\Bundle\\$2Bundle\Admin\\$3Admin">
             <argument />
             <argument>$1$2Bundle</argument>
             <call method="setModelManager">

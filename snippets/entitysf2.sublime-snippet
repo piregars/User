@@ -6,10 +6,12 @@ namespace $1\Bundle\\$2Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Table(name="$4")
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
 class $3
 {
@@ -19,6 +21,11 @@ class $3
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected \$id;
+
+    public function getId()
+    {
+        return \$this->id;
+    }
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
