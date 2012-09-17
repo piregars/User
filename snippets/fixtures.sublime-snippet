@@ -1,0 +1,37 @@
+<snippet>
+    <content><![CDATA[
+<?php
+
+namespace $1\Bundle\\$2Bundle\DataFixtures\ORM;
+
+use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+
+class Load$3Data extends AbstractFixture implements ContainerAwareInterface, OrderedFixtureInterface
+{
+    protected \$container;
+
+    public function setContainer(ContainerInterface \$container = null)
+    {
+        \$this->container = \$container;
+    }
+
+    public function load(ObjectManager \$manager)
+    {
+        $0
+    }
+
+    public function getOrder()
+    {
+        return $4;
+    }
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>fixtures</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

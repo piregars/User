@@ -1,9 +1,9 @@
 <snippet>
     <content><![CDATA[
-<div class="clearfix"></div>$0
+\$this->slug = \Msi\Bundle\PageBundle\Entity\Page::slugify(\$this->$1);
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>clr</tabTrigger>
+    <tabTrigger>slug</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
 </snippet>

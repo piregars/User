@@ -2,16 +2,15 @@
     <content><![CDATA[
 <?php
 
-namespace $1\Bundle\\$2Bundle\Admin;
+namespace $1\Bundle\\${2:App}Bundle\Admin;
 
 use Msi\Bundle\AdminBundle\Admin\Admin;
 
 class $3Admin extends Admin
 {
-    public function buildTable(\$builder)
+    public function buildIndexTable(\$builder)
     {
         \$builder
-            ->add('id')
             ->add('name')
             ->add('updatedAt', 'date')
             ->add('', 'action')

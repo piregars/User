@@ -2,16 +2,14 @@
     <content><![CDATA[
 <?php
 
-namespace $1\Bundle\\$2Bundle\Entity;
+namespace $1\Bundle\\${2:App}Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Table(name="$4")
+ * @ORM\Table(name="${4:app_}$5")
  * @ORM\Entity
- * @ORM\HasLifecycleCallbacks
  */
 class $3
 {
