@@ -4,11 +4,13 @@
 
 namespace $1\Bundle\\${2:App}Bundle\Admin;
 
-use Msi\Bundle\AdminBundle\Admin\Admin;
+use Msi\Bundle\CmfBundle\Admin\Admin;
+use Msi\Bundle\CmfBundle\Grid\GridBuilder;
+use Symfony\Component\Form\FormBuilder;
 
 class $3Admin extends Admin
 {
-    public function buildIndexTable(\$builder)
+    public function buildGrid(GridBuilder \$builder)
     {
         \$builder
             ->add('name')
@@ -17,7 +19,7 @@ class $3Admin extends Admin
         ;
     }
 
-    public function buildForm(\$builder)
+    public function buildForm(FormBuilder \$builder)
     {
         \$builder
             ->add('name')

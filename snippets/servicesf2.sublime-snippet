@@ -1,13 +1,18 @@
 <snippet>
     <content><![CDATA[
-        <service id="$4_$5.$6_manager" class="%msi_admin.base_manager.class%" parent="msi_admin.base_manager">
-            <argument>$1\Bundle\\$2Bundle\Entity\\$3</argument>
-        </service>
 
-        <service id="$4_$5_$6_admin" class="$1\Bundle\\$2Bundle\Admin\\$3Admin" parent="msi_admin.admin">
-            <argument type="service" id="$4_$5.$6_manager" />
-            <tag name="msi.admin"></tag>
-        </service>
+    # $3
+    $4_$5_$6_admin:
+        class: $1\Bundle\\$2Bundle\Admin\\$3Admin
+        arguments: [ @$4_$5.$6_manager ]
+        parent: msi_cmf.admin
+        tags:
+            - { name: msi.admin }
+
+    $4_$5.$6_manager:
+        class: %msi_cmf.manager.class%
+        arguments: [ $1\Bundle\\$2Bundle\Entity\\$3 ]
+        parent: msi_cmf.manager
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>ser</tabTrigger>
