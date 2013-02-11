@@ -1,9 +1,12 @@
 <snippet>
     <content><![CDATA[
-[$0]
+/**
+ * @ORM\OneToMany(targetEntity="$1", mappedBy="object", cascade={"persist", "remove"})
+ */
+protected \$translations;$0
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>ar</tabTrigger>
+    <tabTrigger>translations</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
 </snippet>

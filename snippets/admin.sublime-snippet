@@ -2,10 +2,10 @@
     <content><![CDATA[
 <?php
 
-namespace $1\Bundle\\${2:App}Bundle\Admin;
+namespace $1\\${2:App}Bundle\Admin;
 
-use Msi\Bundle\CmfBundle\Admin\Admin;
-use Msi\Bundle\CmfBundle\Grid\GridBuilder;
+use Msi\CmfBundle\Admin\Admin;
+use Msi\CmfBundle\Grid\GridBuilder;
 use Symfony\Component\Form\FormBuilder;
 
 class $3Admin extends Admin
@@ -14,7 +14,6 @@ class $3Admin extends Admin
     {
         \$builder
             ->add('name')
-            ->add('updatedAt', 'date')
             ->add('', 'action')
         ;
     }
