@@ -80,7 +80,7 @@
 	"font_options":
 	[
 	],
-	"font_size": 14.0,
+	"font_size": 13.0,
 	"gutter": true,
 	"highlight_line": false,
 	"highlight_modified_tabs": false,
@@ -122,7 +122,7 @@
 	"tab_size": 4,
 	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"tree_animation_enabled": false,
+	"tree_animation_enabled": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": false,
