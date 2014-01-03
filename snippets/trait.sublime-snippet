@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-use \Msi\CmfBundle\Doctrine\Extension\Model\\$0;
+use \Msi\AdminBundle\Doctrine\Extension\Model\\$0;
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>trait</tabTrigger>

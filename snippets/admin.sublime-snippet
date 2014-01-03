@@ -14,7 +14,6 @@ class $3Admin extends Admin
     {
         \$builder
             ->add('name')
-            ->add('', 'action')
         ;
     }
 
